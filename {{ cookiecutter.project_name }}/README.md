@@ -2,7 +2,7 @@
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes [Lambda Powertools for operational best practices](https://github.com/awslabs/aws-lambda-powertools-python), and the following files and folders.
 
-- **`hello_world`** - Code for the application's Lambda function.
+- **`default`** - Code for the application's Lambda function.
 - **`events`** - Invocation events that you can use to invoke the function.
 - **`tests`** - Unit tests for the application code. 
 - **`template.yaml`** - A template that defines the application's AWS resources.
@@ -19,10 +19,10 @@ If you prefer to use an integrated development environment (IDE) to build and te
 
 **Make sure you have the following installed before you proceed**
 
-* AWS CLI - [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) configured with Administrator permission
-* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* [Python 3 installed](https://www.python.org/downloads/)
-* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+* AWS CLI    - [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) configured with Administrator permission
+* SAM CLI    - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* PYTHON 3.8 - [Python 3 installed](https://www.python.org/downloads/)
+* Docker     - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 ## Deploy the sample application
 
