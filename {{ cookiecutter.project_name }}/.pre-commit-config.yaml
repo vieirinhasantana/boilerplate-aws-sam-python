@@ -30,23 +30,9 @@ repos:
       - id: debug-statements
       - id: requirements-txt-fixer
       - id: check-added-large-files
-      - id: fix-encoding-pragma
-      - id: name-tests-test
-      - id: pretty-format-json
-
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: ''
-    hooks:
-      - id: isort
 
   - repo: https://github.com/humitos/mirrors-autoflake
     rev: v1.3
     hooks:
       - id: autoflake
         args: ['--in-place', '--remove-all-unused-imports', '--remove-unused-variable']
-
-  - repo: https://github.com/pre-commit/mirrors-yapf
-    rev: ''
-    hooks:
-      - id: yapf
-#        args: ['--style=.style.yapf', '--parallel', '--in-place']
