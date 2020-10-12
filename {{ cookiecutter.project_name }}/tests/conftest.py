@@ -1,7 +1,10 @@
+import os
 import json
+import pytest
 from uuid import uuid4
 
-import pytest
+os.environ['POWERTOOLS_TRACE_DISABLED'] = '1'
+os.environ['POWERTOOLS_METRICS_NAMESPACE'] = 'MyServerlessApplication'
 
 
 class MockContext(object):

@@ -1,5 +1,4 @@
 import json
-import os
 
 import boto3
 from aws_lambda_powertools import Logger, Metrics, Tracer
