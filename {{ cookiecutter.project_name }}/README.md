@@ -21,7 +21,8 @@ If you prefer to use an integrated development environment (IDE) to build and te
 
 * AWS CLI    - [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) configured with Administrator permission
 * SAM CLI    - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* PYTHON 3.8 - [Python 3 installed](https://www.python.org/downloads/)
+* MAKE       - [Install Make](http://gnuwin32.sourceforge.net/packages/make.htm) if windows.
+* PYTHON 3.8 - [Install Python 3](https://www.python.org/downloads/)
 * Docker     - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 ## Deploy the sample application
@@ -45,7 +46,7 @@ Whenever you change your application code, you'll have to run build command:
 {{ cookiecutter.project_name }}$ make build
 ```
 
-The SAM CLI installs dependencies defined in `hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `default/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 Test a single function by invoking it directly with a test event:
 
@@ -66,7 +67,7 @@ The SAM CLI reads the application template to determine the API's routes and the
 
 ```yaml
       Events:
-        HelloWorld:
+        Default:
           Type: Api
           Properties:
             Path: /hello
@@ -80,7 +81,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam logs -n HelloWorldFunction --stack-name <Name-of-your-deployed-stack> --tail
+{{ cookiecutter.project_name }}$ sam logs -n DefaultFunction --stack-name <Name-of-your-deployed-stack> --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -126,7 +127,7 @@ We included a `Makefile` for your convenience - You can find all commands you ca
 
 * **`make build`**: `sam build --use-container`
 * **`make deploy.guided`**: `sam deploy --guided`
-* **`make invoke`**: `sam local invoke HelloWorldFunction --event events/hello_world_event.json`
+* **`make invoke`**: `sam local invoke DefaultFunction --event events/default_event.json`
 * **`make run`**: `sam local start-api`
 
 ## Sync project with function dependencies
@@ -134,5 +135,5 @@ We included a `Makefile` for your convenience - You can find all commands you ca
 Pipenv takes care of isolating dev dependencies and app dependencies. As SAM CLI requires a `requirements.txt` file, you'd need to generate one if new app dependencies have been added:
 
 ```bash
-{{ cookiecutter.project_name }}$ pipenv lock -r > hello_world/requirements.txt
+{{ cookiecutter.project_name }}$ pipenv lock -r > default/requirements.txt
 ```

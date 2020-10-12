@@ -23,12 +23,12 @@ Globals:
                 POWERTOOLS_SERVICE_NAME: hello
 
 Resources:
-    HelloWorldFunction:
+    DefaultFunction:
         Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Properties:
             Handler: app.lambda_handler
             CodeUri: default
-            Description: Hello World function
+            Description: Default function
             Events:
                 CatchAll:
                     Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -48,10 +48,10 @@ Resources:
                     PARAM1: VALUE
             Tags:
                 SOLUTION: MyServerlessApplication
-                SOLUTION_MODULE: MyHelloWorldFunction
+                SOLUTION_MODULE: MyDefaultFunction
 
     # Sample policy to add additional permissions to your Lambda
-    HelloWorldFunctionAdditionalPermission:
+    DefaultFunctionAdditionalPermission:
         Type: "AWS::IAM::Policy"
         Properties:
             PolicyName: "root"
@@ -63,14 +63,14 @@ Resources:
                         Action: "ssm:GetParameters"
                         Resource: "*"
             Roles:
-                - !Ref HelloWorldFunctionRole # Sample policy to demonstrate Implicit IAM Role created with SAM
+                - !Ref DefaultFunctionRole # Sample policy to demonstrate Implicit IAM Role created with SAM
 
 Outputs:
-    HelloWorldApigwURL:
-      Description: "API Gateway endpoint URL for Prod environment for Hello World Function"
+    DefaultApigwURL:
+      Description: "API Gateway endpoint URL for Prod environment for Default Function"
       Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
 
-    HelloWorldFunction:
-      Description: "Hello World Lambda Function ARN"
-      Value: !GetAtt HelloWorldFunction.Arn
+    DefaultFunction:
+      Description: "Boilerplate Lambda Function ARN"
+      Value: !GetAtt DefaultFunction.Arn
 
