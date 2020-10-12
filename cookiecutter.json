@@ -1,4 +1,5 @@
 {
     "project_name": "Name of the project",
-    "include_safe_deployment": "n"
+    "include_safe_deployment": "n",
+    "memory_limit_lambda": "128"
 }
