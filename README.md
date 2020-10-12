@@ -18,6 +18,7 @@ Option | Description
 # Credits
 * This project has been generated with [Cookiecutter](https://github.com/audreyr/cookiecutter)
 * [Bruno Alla's Lambda function template](https://github.com/browniebroke/cookiecutter-lambda-function)
+* [aws-samples](https://github.com/aws-samples/cookiecutter-aws-sam-python)
 
 License
 -------
