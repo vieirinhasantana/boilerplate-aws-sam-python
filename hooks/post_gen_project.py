@@ -7,6 +7,7 @@ INFO = "\x1b[1;33m [INFO]: "
 SUCCESS = "\x1b[1;32m [SUCCESS]: "
 HINT = "\x1b[3;33m"
 
+
 def main():
 
     project_name = '{{ cookiecutter.project_name }}'

@@ -70,7 +70,7 @@ The SAM CLI reads the application template to determine the API's routes and the
         Default:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /
             Method: get
 ```
 
@@ -129,6 +129,12 @@ We included a `Makefile` for your convenience - You can find all commands you ca
 * **`make deploy.guided`**: `sam deploy --guided`
 * **`make invoke`**: `sam local invoke DefaultFunction --event events/default_event.json`
 * **`make run`**: `sam local start-api`
+
+## Moto Mock AWS Services
+Testing code that interacts with AWS has its share of challenges. When combining the PyTest framework with Moto (python library), this gives us the ability to test units of code that interact with AWS, while mocking AWS responses.
+
+[Documentation](http://docs.getmoto.org/en/latest/docs/getting_started.html)
+
 
 ## Sync project with function dependencies
 
