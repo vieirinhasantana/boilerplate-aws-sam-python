@@ -19,8 +19,8 @@ Globals:
                 LOG_LEVEL: INFO
                 POWERTOOLS_LOGGER_SAMPLE_RATE: 0.1
                 POWERTOOLS_LOGGER_LOG_EVENT: true
-                POWERTOOLS_METRICS_NAMESPACE: MyServerlessApplication
-                POWERTOOLS_SERVICE_NAME: hello
+                POWERTOOLS_METRICS_NAMESPACE: {{ cookiecutter.metrics_namespace }}
+                POWERTOOLS_SERVICE_NAME: {{ cookiecutter.project_name }}
 
 Resources:
     DefaultFunction:
@@ -64,7 +64,6 @@ Resources:
                         Resource: "*"
             Roles:
                 - !Ref DefaultFunctionRole # Sample policy to demonstrate Implicit IAM Role created with SAM
-
 Outputs:
     DefaultApigwURL:
       Description: "API Gateway endpoint URL for Prod environment for Default Function"

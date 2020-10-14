@@ -8,6 +8,7 @@ boto3 = "*"
 aws-lambda-powertools = "*"
 
 [dev-packages]
+pre-commit = "*"
 boto3 = "*"
 moto = "*"
 pytest = "*"

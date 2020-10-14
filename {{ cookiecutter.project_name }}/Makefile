@@ -1,5 +1,5 @@
 BASE := $(shell /bin/pwd)
-CODE_COVERAGE = 72
+CODE_COVERAGE = 80
 PIPENV ?= pipenv
 
 #############
@@ -32,6 +32,10 @@ dev:
 
 shell:
 	@$(PIPENV) shell
+
+lint:
+	pre-commit install
+	pre-commit run --all-files --verbose
 
 build: ##=> Same as package except that we don't create a ZIP
 	sam build --use-container
