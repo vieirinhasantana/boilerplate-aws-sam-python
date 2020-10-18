@@ -1,0 +1,11 @@
+name: Workflow
+
+on: push
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: python:alpine
+    steps:
+      - name: Print data
+        run: echo dsadsa
