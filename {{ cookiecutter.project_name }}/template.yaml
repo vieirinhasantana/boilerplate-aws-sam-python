@@ -20,7 +20,7 @@ Globals:
                 POWERTOOLS_LOGGER_SAMPLE_RATE: 0.1
                 POWERTOOLS_LOGGER_LOG_EVENT: true
                 POWERTOOLS_METRICS_NAMESPACE: {{ cookiecutter.metrics_namespace }}
-                POWERTOOLS_SERVICE_NAME: {{ cookiecutter.project_name }}
+                POWERTOOLS_SERVICE_NAME: {{ cookiecutter.project_slug }}
 
 Resources:
     DefaultFunction:

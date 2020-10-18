@@ -10,7 +10,7 @@ class MockContext(object):
     def __init__(self, function_name):
         self.function_name = function_name
         self.function_version = "v$LATEST"
-        self.memory_limit_in_mb = '{{ cookiecutter.memory_limit_lambda }}'
+        self.memory_limit_in_mb = "{{ cookiecutter.memory_limit_lambda }}"
         self.invoked_function_arn = f"arn:aws:lambda:{os.getenv('AWS_REGION_NAME')}:ACCOUNT:function:{self.function_name}"
         self.aws_request_id = str(uuid4)
 
