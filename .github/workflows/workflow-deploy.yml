@@ -24,7 +24,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      with:
-        python-version: '3.x'
     - name: Test code
       run: flake8 --max-line-length=120
