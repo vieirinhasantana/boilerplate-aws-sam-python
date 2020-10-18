@@ -12,6 +12,7 @@ indent_size = 4
 [Makefile]
 indent_style = tab
 
-[{package.json,.travis.yml,.pre-commit-config.yaml,template.yaml}]
+[{package.json,.travis.yml,.pre-commit-config.yaml,template.yaml,serverless.yml}]
 indent_style = space
 indent_size = 2
+
