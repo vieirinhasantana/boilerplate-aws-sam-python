@@ -22,7 +22,10 @@ jobs:
         pip install flake8 radon
         python -V
   lint:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Test code
-      run: flake8 --max-line-length=120
+    lint:
+      name: Python Lint
+      runs-on: ubuntu-latest
+      steps:
+        uses: TrueBrain/actions-flake8@master
+        with:
+          max_line_length: 120
