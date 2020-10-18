@@ -9,6 +9,7 @@ aws-lambda-powertools = "*"
 
 [dev-packages]
 pre-commit = "*"
+radon = "*"
 boto3 = "*"
 moto = "*"
 pytest = "*"
@@ -16,4 +17,4 @@ pytest-cov = "*"
 pytest-env = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"

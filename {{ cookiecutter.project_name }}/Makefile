@@ -1,5 +1,6 @@
 BASE := $(shell /bin/pwd)
 CODE_COVERAGE = 80
+RADON_LEVEL = a
 PIPENV ?= pipenv
 
 #############
@@ -21,6 +22,7 @@ clean: ##=> Deletes current build environment and latest build
 all: clean build
 
 install:
+	$(MAKE) shell
 	$(info [*] Installing pipenv)
 	@pip install pipenv --upgrade
 	$(MAKE) dev
@@ -36,6 +38,9 @@ shell:
 lint:
 	pre-commit install
 	pre-commit run --all-files --verbose
+
+radon:
+	radon cc -n$(RADON_LEVEL) --exclude "venv*" .
 
 build: ##=> Same as package except that we don't create a ZIP
 	sam build --use-container
