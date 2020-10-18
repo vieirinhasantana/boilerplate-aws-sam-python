@@ -1,10 +1,11 @@
 name: Workflow
 
 on:
-  branches:
-    - 'feature/**'
-    - 'hotfix/**'
-    - 'bugfix/**'
+  push:
+    branches:
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'bugfix/**'
 
 jobs:
   lint:

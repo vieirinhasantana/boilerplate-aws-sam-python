@@ -1,10 +1,11 @@
 name: Workflow to Deploy
 
 on:
-  branches:
-    - main
-    - staging
-    - develop
+  push:
+    branches:
+      - main
+      - staging
+      - develop
 
 jobs:
   lint:
